@@ -196,7 +196,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+<div className="min-h-screen flex flex-col bg-white text-black dark:bg-black dark:text-white">
       <Header />
       <main className="flex-grow py-8">
         {currentView === 'home' && renderHome()}
