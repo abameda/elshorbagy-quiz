@@ -8,7 +8,7 @@ import { QuizDataType, Question } from './types';
 
 // Import quiz data directly and use type assertion
 // @ts-ignore
-import quizDataImport from '../../quiz-data.js';
+import quizDataImport from './quiz-data.js';
 const quizData = quizDataImport as QuizDataType;
 
 function App() {
