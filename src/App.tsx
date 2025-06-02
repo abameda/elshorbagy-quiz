@@ -195,17 +195,18 @@ function App() {
     );
   };
 
-  return (
-<div className="min-h-screen flex flex-col bg-white text-black dark:bg-black dark:text-white">
-      <Header />
-      <main className="flex-grow py-8">
-        {currentView === 'home' && renderHome()}
-        {currentView === 'quiz' && renderQuiz()}
-        {currentView === 'results' && renderResults()}
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
+return (
+  <div className="min-h-screen flex flex-col bg-white text-black dark:bg-black dark:text-white">
+    <Header />
+    
+    <main className="flex-1 py-8">
+      {currentView === 'home' && renderHome()}
+      {currentView === 'quiz' && renderQuiz()}
+      {currentView === 'results' && renderResults()}
+    </main>
+    
+    <Footer />
+  </div>
+);
+};
 export default App;
