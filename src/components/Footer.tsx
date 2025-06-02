@@ -2,10 +2,10 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-<footer className="bg-black text-white ...">
-      <div className="container mx-auto text-center">
+<footer className="bg-white text-black dark:bg-black text-white">
+      <div className="container mx-auto text-center text-black dark:text-white ">
         <p>© {new Date().getFullYear()} Digital Logic & Design MCQ Quiz</p>
-        <p className="text-sm mt-1">Created by Abdelhmeed Elshorbagy</p>
+        <p className="text-sm mt-1 text-black dark:text-white">Created by Abdelhmeed Elshorbagy</p>
 
         <div className="flex justify-center gap-4 mt-4">
           <a href="https://www.instagram.com/abamedax" target="_blank" rel="noopener noreferrer">
