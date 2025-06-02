@@ -23,7 +23,7 @@ const quizData = {
           "AND",
           "OR",
           "NAND",
-          "XOR"
+          "NOT"
         ],
         correctAnswer: 2
       },
@@ -245,12 +245,12 @@ const quizData = {
         id: "l2q7",
         question: "What is the dual of the expression X⋅(Y+Z)?",
         options: [
-          "X + Y · Z",
+          "X + (Y · Z)",
           "X' + Y' + Z'",
           "X + Y + Z",
           "X' · Y' · Z'"
         ],
-        correctAnswer: 0 // Note: The correct answer should be X + (Y · Z), option 'a' is the closest representation.
+        correctAnswer: 0 
       },
       {
         id: "l2q8",
@@ -270,9 +270,9 @@ const quizData = {
           "A'B + C",
           "AC",
           "BC",
-          "A'C"
+          "C(A + B)"
         ],
-        correctAnswer: 3 // Note: The prompt has an error, simplification is A'BC+AC. Let's assume the correct answer is based on the options. The simplification is not straightforward without more context (e.g., A'B+AC is not correct). Consensus theorem would be (A'B + AC + BC). Let's stick with the user provided answer key.
+        correctAnswer: 3 
       },
       {
         id: "l2q10",
@@ -292,9 +292,9 @@ const quizData = {
           "A'B + AC",
           "AB + BC",
           "A'B + C",
-          "A'B + AB"
+          "B"
         ],
-        correctAnswer: 0 // Note: The simplification is A'B + AB(C' + C) = A'B + AB = B(A' + A) = B. The answer key provided is A'B + AC. Sticking to the key.
+        correctAnswer: 3
       },
       {
         id: "l2q12",
