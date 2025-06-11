@@ -330,12 +330,6 @@ const Quiz = () => {
                 {t.backToHome}
               </button>
               <button
-                  onClick={toggleLanguage}
-                  className="px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
-              >
-                {t.switchToArabic}
-              </button>
-              <button
                   onClick={toggleDarkMode}
                   className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
                   aria-label="Toggle dark mode"
