@@ -10,7 +10,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
-  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [ setQuizCompleted] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [answeredQuestions, setAnsweredQuestions] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
