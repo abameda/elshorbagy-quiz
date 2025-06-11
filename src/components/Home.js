@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { quizData, quizDataArabic, chapterMapping, reverseChapterMapping } from '../data/questions-v2';
 import TypewriterBanner from './TypewriterBanner';
+import { quizData } from "../data/questions-v2"; // Import quizData
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState('en'); // 'en' for English, 'ar' for Arabic
   const [bannerComplete, setBannerComplete] = useState(false);
   const [resetBanner, setResetBanner] = useState(false);
-  
-  // Get the appropriate quiz data based on language
-  const currentQuizData = language === 'en' ? quizData : quizDataArabic;
   
   useEffect(() => {
     // Check for user preference in localStorage
@@ -59,15 +56,15 @@ const Home = () => {
   
   // Banner messages
   const bannerMessages = {
-    en: "Created by Abdelhmeed Elshorbagy for Computer & AI students for the final exam in Computer Architecture.\nI truly hope it helps you and makes things easier.\nFinally, I kindly ask you to keep me and the people of Gaza in your prayers.",
-    ar: "تم الإنشاء بواسطة عبد الحميد الشوربجي لطلاب قسم الحاسبات والذكاء الاصطناعي من أجل امتحان نهاية الترم في مادة معمارية الحاسوب.\nأتمنى إنه يفيدكم فعلاً ويساعدكم.\nوفي الختام، أسألكم الدعاء لي ولأهل غزة."
+    en: "Created by Abdelhmeed Elshorbagy for Computer & AI students for the final exam in Digital Logic & Design.\nI truly hope it helps you and makes things easier.\nFinally, I kindly ask you to keep me and the people of Gaza in your prayers.",
+    ar: "تم الإنشاء بواسطة عبد الحميد الشوربجي لطلاب قسم الحاسبات والذكاء الاصطناعي من أجل امتحان نهاية الترم في مادة تصميم المنطق الرقمي.\nأتمنى إنه يفيدكم فعلاً ويساعدكم.\nوفي الختام، أسألكم الدعاء لي ولأهل غزة."
   };
   
   // Translations
   const translations = {
     en: {
-      title: 'Computer Architecture Quiz',
-      subtitle: 'Test your knowledge on Computer Architecture concepts',
+      title: 'digital logic & design',
+      subtitle: 'Test your knowledge on digital logic & design concepts',
       selectChapter: 'Select a chapter to start the quiz:',
       startQuiz: 'Start Quiz',
       questionsAvailable: 'questions available',
@@ -76,8 +73,8 @@ const Home = () => {
       switchToArabic: 'العربية'
     },
     ar: {
-      title: 'اختبار هندسة الكمبيوتر',
-      subtitle: 'اختبر معرفتك بمفاهيم هندسة الكمبيوتر',
+      title: 'digital logic & design',
+      subtitle: 'اختبر معرفتك بمفاهيم "تصميم المنطق الرقمي',
       selectChapter: 'اختر فصلاً لبدء الاختبار:',
       startQuiz: 'ابدأ الاختبار',
       questionsAvailable: 'أسئلة متاحة',
@@ -149,16 +146,17 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Object.keys(currentQuizData).map((chapter) => {
-              const questionCount = currentQuizData[chapter].length;
+            {Object.keys(quizData).map((chapterKey) => {
+              const chapter = quizData[chapterKey];
+              const questionCount = chapter.questions.length;
               return (
                 <div 
-                  key={chapter}
+                  key={chapterKey}
                   className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105 flex flex-col h-full"
                 >
                   <div className="p-6 flex-grow flex flex-col">
                     <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">
-                      {chapter}
+                      {chapter.title}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">
                       {questionCount > 0 
@@ -167,7 +165,7 @@ const Home = () => {
                       }
                     </p>
                     <button
-                      onClick={() => questionCount > 0 && startQuiz(chapter)}
+                      onClick={() => questionCount > 0 && startQuiz(chapterKey)}
                       disabled={questionCount === 0}
                       className={`w-full py-2 rounded-md font-medium mt-auto ${
                         questionCount > 0
@@ -219,3 +217,5 @@ const Home = () => {
 };
 
 export default Home;
+
+
