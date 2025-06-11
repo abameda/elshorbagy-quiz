@@ -5,7 +5,7 @@ import { quizData } from "../data/questions-v2"; // Import quizData
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState('en'); // 'en' for English, 'ar' for Arabic
-  const [bannerComplete, setBannerComplete] = useState(false);
+  const [ setBannerComplete] = useState(false);
   const [resetBanner, setResetBanner] = useState(false);
   
   useEffect(() => {

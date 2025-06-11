@@ -102,17 +102,6 @@ const Quiz = () => {
     // Removed: setCurrentQuestionIndex(0); - This was causing the issue
   };
 
-  const handleChapterChange = (chapter) => {
-    setCurrentChapter(chapter);
-    setCurrentQuestionIndex(0);
-    setSelectedOption(null);
-    setShowExplanation(false);
-    setUserAnswers([]);
-    setScore(0);
-    setShowChapterResults(false);
-    // NEW: Reset question answers when changing chapters
-    setQuestionAnswers({});
-  };
 
   const handleOptionSelect = (optionIndex) => {
     const questionKey = `${currentChapter}-${currentQuestionIndex}`;
